@@ -1,0 +1,124 @@
+﻿pagina,verificacao,resultado
+index.html,IDs únicos,OK
+index.html,Um h1 e um main,OK
+index.html,Sem CSS ou JavaScript,OK
+index.html,Idioma pt-BR,OK
+index.html,Primeiro elemento do body é link de salto,OK
+index.html,Página atual identificada,OK
+index.html,Títulos sem salto ascendente,OK
+index.html,Imagens com alt,OK
+index.html,Campos com label,OK
+index.html,aria-labelledby resolve IDs,OK
+index.html,aria-labelledby resolve IDs,OK
+index.html,aria-labelledby resolve IDs,OK
+index.html,aria-labelledby resolve IDs,OK
+index.html,Recurso local: #conteudo,OK
+index.html,Âncora: #conteudo,OK
+index.html,Recurso local: index.html,OK
+index.html,Recurso local: index.html,OK
+index.html,Recurso local: programacao.html,OK
+index.html,Recurso local: palestrantes.html,OK
+index.html,Recurso local: inscricao.html,OK
+index.html,Recurso local: programacao.html,OK
+index.html,Recurso local: img/auditorio.png,OK
+index.html,Recurso local: inscricao.html,OK
+index.html,Recurso local: programacao.html,OK
+index.html,Recurso local: palestrantes.html,OK
+index.html,Recurso local: programacao.html#dia-1,OK
+index.html,Âncora: programacao.html#dia-1,OK
+index.html,Recurso local: programacao.html#dia-3,OK
+index.html,Âncora: programacao.html#dia-3,OK
+index.html,Recurso local: inscricao.html#acessibilidade,OK
+index.html,Âncora: inscricao.html#acessibilidade,OK
+index.html,Recurso local: #topo,OK
+index.html,Âncora: #topo,OK
+programacao.html,IDs únicos,OK
+programacao.html,Um h1 e um main,OK
+programacao.html,Sem CSS ou JavaScript,OK
+programacao.html,Idioma pt-BR,OK
+programacao.html,Primeiro elemento do body é link de salto,OK
+programacao.html,Página atual identificada,OK
+programacao.html,Títulos sem salto ascendente,OK
+programacao.html,Imagens com alt,OK
+programacao.html,Campos com label,OK
+programacao.html,aria-labelledby resolve IDs,OK
+programacao.html,aria-labelledby resolve IDs,OK
+programacao.html,Recurso local: #conteudo,OK
+programacao.html,Âncora: #conteudo,OK
+programacao.html,Recurso local: index.html,OK
+programacao.html,Recurso local: index.html,OK
+programacao.html,Recurso local: programacao.html,OK
+programacao.html,Recurso local: palestrantes.html,OK
+programacao.html,Recurso local: inscricao.html,OK
+programacao.html,Recurso local: #dia-1,OK
+programacao.html,Âncora: #dia-1,OK
+programacao.html,Recurso local: #dia-2,OK
+programacao.html,Âncora: #dia-2,OK
+programacao.html,Recurso local: #dia-3,OK
+programacao.html,Âncora: #dia-3,OK
+programacao.html,Recurso local: inscricao.html#duvidas,OK
+programacao.html,Âncora: inscricao.html#duvidas,OK
+programacao.html,Recurso local: inscricao.html#acessibilidade,OK
+programacao.html,Âncora: inscricao.html#acessibilidade,OK
+programacao.html,Recurso local: #topo,OK
+programacao.html,Âncora: #topo,OK
+programacao.html,Tabela com caption e scope,OK
+programacao.html,Tabela com caption e scope,OK
+programacao.html,Tabela com caption e scope,OK
+palestrantes.html,IDs únicos,OK
+palestrantes.html,Um h1 e um main,OK
+palestrantes.html,Sem CSS ou JavaScript,OK
+palestrantes.html,Idioma pt-BR,OK
+palestrantes.html,Primeiro elemento do body é link de salto,OK
+palestrantes.html,Página atual identificada,OK
+palestrantes.html,Títulos sem salto ascendente,OK
+palestrantes.html,Imagens com alt,OK
+palestrantes.html,Campos com label,OK
+palestrantes.html,aria-labelledby resolve IDs,OK
+palestrantes.html,aria-labelledby resolve IDs,OK
+palestrantes.html,Recurso local: #conteudo,OK
+palestrantes.html,Âncora: #conteudo,OK
+palestrantes.html,Recurso local: index.html,OK
+palestrantes.html,Recurso local: index.html,OK
+palestrantes.html,Recurso local: programacao.html,OK
+palestrantes.html,Recurso local: palestrantes.html,OK
+palestrantes.html,Recurso local: inscricao.html,OK
+palestrantes.html,Recurso local: img/ana-souza.png,OK
+palestrantes.html,Recurso local: img/bruno-lima.png,OK
+palestrantes.html,Recurso local: img/carla-mendes.png,OK
+palestrantes.html,Recurso local: programacao.html,OK
+palestrantes.html,Recurso local: inscricao.html#acessibilidade,OK
+palestrantes.html,Âncora: inscricao.html#acessibilidade,OK
+palestrantes.html,Recurso local: #topo,OK
+palestrantes.html,Âncora: #topo,OK
+inscricao.html,IDs únicos,OK
+inscricao.html,Um h1 e um main,OK
+inscricao.html,Sem CSS ou JavaScript,OK
+inscricao.html,Idioma pt-BR,OK
+inscricao.html,Primeiro elemento do body é link de salto,OK
+inscricao.html,Página atual identificada,OK
+inscricao.html,Títulos sem salto ascendente,OK
+inscricao.html,Imagens com alt,OK
+inscricao.html,Campos com label,OK
+inscricao.html,aria-labelledby resolve IDs,OK
+inscricao.html,aria-describedby resolve IDs,OK
+inscricao.html,aria-labelledby resolve IDs,OK
+inscricao.html,aria-labelledby resolve IDs,OK
+inscricao.html,aria-labelledby resolve IDs,OK
+inscricao.html,aria-labelledby resolve IDs,OK
+inscricao.html,aria-labelledby resolve IDs,OK
+inscricao.html,Recurso local: #conteudo,OK
+inscricao.html,Âncora: #conteudo,OK
+inscricao.html,Recurso local: index.html,OK
+inscricao.html,Recurso local: index.html,OK
+inscricao.html,Recurso local: programacao.html,OK
+inscricao.html,Recurso local: palestrantes.html,OK
+inscricao.html,Recurso local: inscricao.html,OK
+inscricao.html,Recurso local: inscricao.html#demonstracao,OK
+inscricao.html,Âncora: inscricao.html#demonstracao,OK
+inscricao.html,Recurso local: #termos-participacao,OK
+inscricao.html,Âncora: #termos-participacao,OK
+inscricao.html,Recurso local: inscricao.html#acessibilidade,OK
+inscricao.html,Âncora: inscricao.html#acessibilidade,OK
+inscricao.html,Recurso local: #topo,OK
+inscricao.html,Âncora: #topo,OK

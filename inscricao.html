@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Inscrição demonstrativa — projeto acadêmico demonstrativo SATEC 2026." name="description"/>
+  <title>
+   Inscrição demonstrativa | SATEC 2026
+  </title>
+ </head>
+ <body>
+  <a href="#conteudo">
+   Pular para o conteúdo principal
+  </a>
+  <!-- O cabeçalho e o menu são compartilhados; aria-current identifica a página aberta. -->
+  <header id="topo">
+   <p>
+    <a href="index.html">
+     SATEC 2026
+    </a>
+    — Semana Acadêmica de Tecnologia
+   </p>
+   <p>
+    Projeto acadêmico: evento, participantes e condições de participação fictícios.
+   </p>
+   <nav aria-label="Navegação principal">
+    <ul>
+     <li>
+      <a href="index.html">
+       Início
+      </a>
+     </li>
+     <li>
+      <a href="programacao.html">
+       Programação
+      </a>
+     </li>
+     <li>
+      <a href="palestrantes.html">
+       Palestrantes
+      </a>
+     </li>
+     <li>
+      <a aria-current="page" href="inscricao.html">
+       Inscrição
+      </a>
+     </li>
+    </ul>
+   </nav>
+  </header>
+  <!-- Um único main reúne o conteúdo exclusivo; tabindex=-1 permite receber o foco do link de salto. -->
+  <main id="conteudo" tabindex="-1">
+   <h1>
+    Inscrição demonstrativa
+   </h1>
+   <section aria-labelledby="formulario">
+    <h2 id="formulario">
+     Formulário demonstrativo
+    </h2>
+    <p id="aviso-formulario">
+     Use somente dados fictícios. Este formulário demonstra marcação e validação nativa do navegador. Não cadastra participantes, não envia e-mail e não armazena inscrições. Os campos não têm atributo name para não incluir os valores na URL.
+    </p>
+    <!-- labels associam cada instrução ao campo. Sem backend, name é omitido deliberadamente para não serializar dados na navegação GET. -->
+    <form action="inscricao.html#demonstracao" aria-describedby="aviso-formulario" method="get">
+     <label for="nome">
+      Obrigatório: Nome completo
+     </label>
+     <input autocomplete="name" id="nome" required="" type="text"/>
+     <label for="email">
+      Obrigatório: E-mail
+     </label>
+     <input autocomplete="email" id="email" required="" type="email"/>
+     <label for="curso">
+      Obrigatório: Curso
+     </label>
+     <input id="curso" required="" type="text"/>
+     <label for="periodo">
+      Obrigatório: Período
+     </label>
+     <select id="periodo" required="">
+      <option value="">
+       Selecione
+      </option>
+      <option value="1">
+       1º período
+      </option>
+      <option value="2">
+       2º período
+      </option>
+      <option value="3">
+       3º período
+      </option>
+      <option value="4">
+       4º período
+      </option>
+      <option value="5">
+       5º período
+      </option>
+      <option value="6">
+       6º período
+      </option>
+      <option value="7">
+       7º período
+      </option>
+      <option value="8">
+       8º período
+      </option>
+      <option value="egresso">
+       Egresso / Profissional da área
+      </option>
+     </select>
+     <input id="termos" required="" type="checkbox"/>
+     <label for="termos">
+      Obrigatório: Li e aceito os
+      <a href="#termos-participacao">
+       termos de participação
+      </a>
+     </label>
+     <button type="submit">
+      Validar preenchimento de exemplo
+     </button>
+    </form>
+   </section>
+   <section aria-labelledby="resultado" id="demonstracao">
+    <h2 id="resultado">
+     Limites da demonstração
+    </h2>
+    <p>
+     Ao acionar o botão com campos válidos, o navegador retorna a esta seção. Isso não confirma uma inscrição; nenhum cadastro é realizado.
+    </p>
+   </section>
+   <section aria-labelledby="titulo-termos" id="termos-participacao">
+    <h2 id="titulo-termos">
+     Termos do exemplo acadêmico
+    </h2>
+    <p>
+     Os dados devem ser fictícios. A participação, as vagas e os certificados descritos neste site fazem parte de um exercício, sem oferta real.
+    </p>
+   </section>
+   <section aria-labelledby="titulo-duvidas" id="duvidas">
+    <h2 id="titulo-duvidas">
+     Perguntas frequentes
+    </h2>
+    <details>
+     <summary>
+      A inscrição é gratuita?
+     </summary>
+     <p>
+      No cenário fictício, a inscrição seria gratuita e limitada a 300 vagas. Este site não oferece vagas reais.
+     </p>
+    </details>
+    <details>
+     <summary>
+      Recebo certificado?
+     </summary>
+     <p>
+      No cenário fictício, haveria certificado de 20 horas mediante frequência mínima. Este projeto não emite certificados.
+     </p>
+    </details>
+    <details>
+     <summary>
+      Posso participar de mais de uma oficina?
+     </summary>
+     <p>
+      No cenário fictício, seria possível escolher oficinas com horários diferentes.
+     </p>
+    </details>
+   </section>
+   <section aria-labelledby="titulo-acessibilidade" id="acessibilidade">
+    <h2 id="titulo-acessibilidade">
+     Recursos de acessibilidade
+    </h2>
+    <p>
+     As quatro páginas incluem link de salto, títulos hierárquicos, navegação consistente e identificação da página atual. O formulário tem rótulos e as tabelas possuem cabeçalhos.
+    </p>
+    <p>
+     Os testes de teclado, leitor de tela e ferramentas externas devem ser concluídos conforme o checklist do projeto.
+    </p>
+   </section>
+  </main>
+  <aside aria-labelledby="privacidade">
+   <h2 id="privacidade">
+    Privacidade na demonstração
+   </h2>
+   <p>
+    Não informe dados pessoais reais. Não existe servidor de cadastro neste projeto.
+   </p>
+  </aside>
+  <footer>
+   <p>
+    <small>
+     © 2026 SATEC — projeto acadêmico demonstrativo.
+    </small>
+   </p>
+   <p>
+    Esta página não representa um evento real nem recebe inscrições reais.
+   </p>
+   <p>
+    <a href="inscricao.html#acessibilidade">
+     Recursos de acessibilidade
+    </a>
+   </p>
+   <p>
+    <a href="#topo">
+     Voltar ao topo
+    </a>
+   </p>
+  </footer>
+ </body>
+</html>

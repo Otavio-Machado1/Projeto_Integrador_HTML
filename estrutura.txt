@@ -1,0 +1,17 @@
+JUSTIFICATIVAS — SATEC 2026
+
+1. Cada documento tem doctype HTML5, lang pt-BR, charset UTF-8, viewport e title próprio.
+2. header e footer agrupam apresentação e informações recorrentes do site; ficam fora de main.
+3. nav contém uma lista com as quatro páginas. aria-current=page indica a página atual e aria-label nomeia cada navegação.
+4. Há um único main e um h1 por página. h2 delimita temas e h3 perfis ou dias subordinados. Os títulos não são escolhidos pelo tamanho visual.
+5. section agrupa temas com título. article identifica cada perfil ou destaque independente. aside contém informação complementar, não apenas uma coluna visual.
+6. figure e figcaption associam a ilustração do evento à legenda. O alt da imagem clicável descreve o destino; os perfis informam que são ilustrações.
+7. As tabelas de programação são dados, não layout: caption nomeia a tabela; th com scope col e row identifica colunas e linhas.
+8. dl organiza pares termo/valor e time fornece datas e horários legíveis por máquina.
+9. O primeiro elemento do body é o link Pular para o conteúdo principal. O destino main tem tabindex=-1: pode receber foco, sem entrar na sequência comum de Tab. Não há tabindex positivo.
+10. Labels vinculados por for/id identificam campos. required e tipos adequados permitem validação nativa. A falta deliberada de name evita dados na URL nesta demonstração sem backend.
+11. details e summary oferecem perguntas expansíveis sem JavaScript. Links têm texto descritivo; não há controles falsos com div ou span.
+12. ARIA apenas complementa a semântica nativa. Não há roles redundantes nem aria-hidden em conteúdo interativo.
+13. Foram retirados CSS, recursos ausentes e links para páginas não fornecidas. Os perfis e termos passaram a âncoras nas quatro páginas existentes.
+14. Imagens locais foram criadas para evitar dependência de recursos externos e não simular fotos de pessoas reais. Não foram inventados contatos ou perfis oficiais do evento.
+
