@@ -1,11 +1,13 @@
 :root {
-  --cor-texto: #0f172a;
-  --cor-fundo: #f8fafc;
-  --cor-superficie: #ffffff;
-  --cor-borda: #e2e8f0;
-  --cor-primaria: #1e3a8a;
-  --cor-acento: #0d9488;
-  --cor-erro: #b91c1c;
+  color-scheme: dark;
+  --cor-texto: #e8f5e9;
+  --cor-fundo: #050805;
+  --cor-superficie: #111811;
+  --cor-borda: #263826;
+  --cor-primaria: #4ade80;
+  --cor-acento: #22c55e;
+  --cor-botao: #15803d;
+  --cor-erro: #f87171;
   --raio: 6px;
 }
 
@@ -42,6 +44,10 @@ aside {
   margin: 0 1rem;
 }
 
+a {
+  color: var(--cor-primaria);
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -68,7 +74,7 @@ h2 {
 
 header {
   background-color: var(--cor-superficie);
-  border-bottom: 4px solid var(--cor-primaria);
+  border-bottom: 4px solid var(--cor-acento);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -110,7 +116,7 @@ header nav a {
 .botao {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background-color: var(--cor-primaria);
+  background-color: var(--cor-botao);
   color: #ffffff;
   text-decoration: none;
   border-radius: var(--raio);
@@ -148,7 +154,7 @@ td {
 }
 
 tbody tr:nth-child(even) {
-  background-color: #f1f5f9;
+  background-color: #182418;
 }
 
 .cards {
@@ -201,7 +207,7 @@ input:not([type="checkbox"]),
 select {
   width: 100%;
   min-height: 2.75rem;
-  border: 1px solid #64748b;
+  border: 1px solid #4b6b4b;
 }
 
 .dica {
@@ -209,13 +215,13 @@ select {
 }
 
 .aceite input {
-  accent-color: var(--cor-primaria);
+  accent-color: var(--cor-botao);
 }
 
 form button {
   justify-self: start;
   padding: 0.75rem 1.5rem;
-  background-color: var(--cor-primaria);
+  background-color: var(--cor-botao);
   color: #ffffff;
   border: 0;
   border-radius: var(--raio);
@@ -223,7 +229,7 @@ form button {
 
 .botao:hover,
 form button:hover {
-  background-color: #1e40af;
+  background-color: #166534;
 }
 
 :focus-visible {
@@ -240,15 +246,16 @@ select:user-invalid {
 }
 
 footer {
-  background-color: #0f172a;
-  color: #e2e8f0;
+  background-color: #000000;
+  border-top: 4px solid var(--cor-acento);
+  color: #e8f5e9;
   font-size: 0.875rem;
   text-align: center;
   padding: 1rem;
 }
 
 footer a {
-  color: #ffffff;
+  color: var(--cor-primaria);
 }
 
 @media (min-width: 600px) {
