@@ -7,20 +7,21 @@
   <title>
    Início — SATEC 2026 | SATEC 2026
   </title>
+  <link href="estilo.css" rel="stylesheet"/>
  </head>
  <body>
-  <a href="#conteudo">
+  <a class="pular" href="#conteudo">
    Pular para o conteúdo principal
   </a>
   <!-- O cabeçalho e o menu são compartilhados; aria-current identifica a página aberta. -->
   <header id="topo">
-   <p>
+   <p class="logo">
     <a href="index.html">
      SATEC 2026
     </a>
     — Semana Acadêmica de Tecnologia
    </p>
-   <p>
+   <p class="aviso">
     Projeto acadêmico: evento, participantes e condições de participação fictícios.
    </p>
    <nav aria-label="Navegação principal">
@@ -47,6 +48,10 @@
      </li>
     </ul>
    </nav>
+   <!-- Parece um botão, mas leva a outra página: por isso continua sendo um link. -->
+   <a class="botao" href="inscricao.html">
+    Inscreva-se
+   </a>
   </header>
   <!-- Um único main reúne o conteúdo exclusivo; tabindex=-1 permite receber o foco do link de salto. -->
   <main id="conteudo" tabindex="-1">
@@ -108,7 +113,9 @@
     <h2 id="destaques">
      Destaques da programação
     </h2>
-    <article>
+    <!-- A div só agrupa os cards para o Grid; não tem significado. -->
+    <div class="cards">
+    <article class="card">
      <h3>
       Oficina de HTML acessível
      </h3>
@@ -119,7 +126,7 @@
       Consultar os horários do primeiro dia
      </a>
     </article>
-    <article>
+    <article class="card">
      <h3>
       Mesa-redonda sobre inteligência artificial
      </h3>
@@ -130,6 +137,7 @@
       Consultar os horários do terceiro dia
      </a>
     </article>
+    </div>
    </section>
   </main>
   <!-- O aside contém informações complementares, sem ser usado apenas para posicionamento visual. -->

@@ -1,8 +1,15 @@
-SATEC 2026 — Projeto Integrador, entrega 1
+SATEC 2026 — Projeto Integrador, entrega 2
 Este projeto apresenta um evento fictício de tecnologia e tem quatro páginas: Início, Programação, Palestrantes e Inscrição.
 
 Sobre o projeto
-O site foi feito só com HTML, sem CSS. A ideia foi organizar o conteúdo com títulos, menus e tags semânticas, incluindo recursos de acessibilidade.
+Na entrega 1 o site foi feito só com HTML, organizando o conteúdo com títulos, menus e tags semânticas, incluindo recursos de acessibilidade.
+
+Na entrega 2 (branch entrega-2) as quatro páginas receberam estilo com CSS no arquivo estilo.css, seguindo as aulas 15, 16 e 17:
+- box model, Flexbox (cabeçalho, menus, cards) e Grid (mapa da página, grade de cards, formulário, rodapé);
+- responsividade mobile first com media queries em 600px e 900px;
+- variáveis CSS, modo escuro com light-dark(), clamp(), :has(), container query e animações só para quem não pediu menos movimento.
+
+As decisões estão em docs/entrega-2-css.md.
 
 Usei IA como apoio para pensar nas ideias, melhorar a organização do layout e ajudar na criação e revisão do código e da documentação.
 

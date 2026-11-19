@@ -7,20 +7,21 @@
   <title>
    Inscrição demonstrativa | SATEC 2026
   </title>
+  <link href="estilo.css" rel="stylesheet"/>
  </head>
  <body>
-  <a href="#conteudo">
+  <a class="pular" href="#conteudo">
    Pular para o conteúdo principal
   </a>
   <!-- O cabeçalho e o menu são compartilhados; aria-current identifica a página aberta. -->
   <header id="topo">
-   <p>
+   <p class="logo">
     <a href="index.html">
      SATEC 2026
     </a>
     — Semana Acadêmica de Tecnologia
    </p>
-   <p>
+   <p class="aviso">
     Projeto acadêmico: evento, participantes e condições de participação fictícios.
    </p>
    <nav aria-label="Navegação principal">
@@ -47,6 +48,10 @@
      </li>
     </ul>
    </nav>
+   <!-- Parece um botão, mas leva a outra página: por isso continua sendo um link. -->
+   <a class="botao" href="inscricao.html">
+    Inscreva-se
+   </a>
   </header>
   <!-- Um único main reúne o conteúdo exclusivo; tabindex=-1 permite receber o foco do link de salto. -->
   <main id="conteudo" tabindex="-1">
@@ -62,60 +67,85 @@
     </p>
     <!-- labels associam cada instrução ao campo. Sem backend, name é omitido deliberadamente para não serializar dados na navegação GET. -->
     <form action="inscricao.html#demonstracao" aria-describedby="aviso-formulario" method="get">
-     <label for="nome">
-      Obrigatório: Nome completo
-     </label>
-     <input autocomplete="name" id="nome" required="" type="text"/>
-     <label for="email">
-      Obrigatório: E-mail
-     </label>
-     <input autocomplete="email" id="email" required="" type="email"/>
-     <label for="curso">
-      Obrigatório: Curso
-     </label>
-     <input id="curso" required="" type="text"/>
-     <label for="periodo">
-      Obrigatório: Período
-     </label>
-     <select id="periodo" required="">
-      <option value="">
-       Selecione
-      </option>
-      <option value="1">
-       1º período
-      </option>
-      <option value="2">
-       2º período
-      </option>
-      <option value="3">
-       3º período
-      </option>
-      <option value="4">
-       4º período
-      </option>
-      <option value="5">
-       5º período
-      </option>
-      <option value="6">
-       6º período
-      </option>
-      <option value="7">
-       7º período
-      </option>
-      <option value="8">
-       8º período
-      </option>
-      <option value="egresso">
-       Egresso / Profissional da área
-      </option>
-     </select>
-     <input id="termos" required="" type="checkbox"/>
-     <label for="termos">
-      Obrigatório: Li e aceito os
-      <a href="#termos-participacao">
-       termos de participação
-      </a>
-     </label>
+     <!-- fieldset + legend agrupam campos relacionados; o leitor de tela anuncia o grupo.
+          Cada div.campo só junta o label ao seu campo para o layout. -->
+     <fieldset>
+      <legend>
+       Dados pessoais
+      </legend>
+      <div class="campo">
+       <label for="nome">
+        Obrigatório: Nome completo
+       </label>
+       <input autocomplete="name" id="nome" required="" type="text"/>
+      </div>
+      <div class="campo">
+       <label for="email">
+        Obrigatório: E-mail
+       </label>
+       <input aria-describedby="dica-email" autocomplete="email" id="email" required="" type="email"/>
+       <p class="dica" id="dica-email">
+        Use um e-mail fictício, no formato nome@exemplo.com.
+       </p>
+      </div>
+     </fieldset>
+     <fieldset>
+      <legend>
+       Dados acadêmicos
+      </legend>
+      <div class="campo">
+       <label for="curso">
+        Obrigatório: Curso
+       </label>
+       <input id="curso" required="" type="text"/>
+      </div>
+      <div class="campo">
+       <label for="periodo">
+        Obrigatório: Período
+       </label>
+       <select id="periodo" required="">
+        <option value="">
+         Selecione
+        </option>
+        <option value="1">
+         1º período
+        </option>
+        <option value="2">
+         2º período
+        </option>
+        <option value="3">
+         3º período
+        </option>
+        <option value="4">
+         4º período
+        </option>
+        <option value="5">
+         5º período
+        </option>
+        <option value="6">
+         6º período
+        </option>
+        <option value="7">
+         7º período
+        </option>
+        <option value="8">
+         8º período
+        </option>
+        <option value="egresso">
+         Egresso / Profissional da área
+        </option>
+       </select>
+      </div>
+     </fieldset>
+     <div class="aceite">
+      <input id="termos" required="" type="checkbox"/>
+      <label for="termos">
+       Obrigatório: Li e aceito os
+       <a href="#termos-participacao">
+        termos de participação
+       </a>
+      </label>
+     </div>
      <button type="submit">
       Validar preenchimento de exemplo
      </button>

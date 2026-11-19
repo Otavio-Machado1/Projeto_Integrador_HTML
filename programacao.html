@@ -7,20 +7,21 @@
   <title>
    Programação | SATEC 2026
   </title>
+  <link href="estilo.css" rel="stylesheet"/>
  </head>
  <body>
-  <a href="#conteudo">
+  <a class="pular" href="#conteudo">
    Pular para o conteúdo principal
   </a>
   <!-- O cabeçalho e o menu são compartilhados; aria-current identifica a página aberta. -->
   <header id="topo">
-   <p>
+   <p class="logo">
     <a href="index.html">
      SATEC 2026
     </a>
     — Semana Acadêmica de Tecnologia
    </p>
-   <p>
+   <p class="aviso">
     Projeto acadêmico: evento, participantes e condições de participação fictícios.
    </p>
    <nav aria-label="Navegação principal">
@@ -47,6 +48,10 @@
      </li>
     </ul>
    </nav>
+   <!-- Parece um botão, mas leva a outra página: por isso continua sendo um link. -->
+   <a class="botao" href="inscricao.html">
+    Inscreva-se
+   </a>
   </header>
   <!-- Um único main reúne o conteúdo exclusivo; tabindex=-1 permite receber o foco do link de salto. -->
   <main id="conteudo" tabindex="-1">
@@ -61,7 +66,7 @@
      Agenda dos três dias
     </h2>
     <!-- Tabelas representam dados, não layout. caption e scope identificam suas relações. -->
-    Âncoras internas: cada link leva à tabela do respectivo dia
+    <!-- Âncoras internas: cada link leva à tabela do respectivo dia. -->
     <nav aria-label="Dias do evento">
      <ul>
       <li>
