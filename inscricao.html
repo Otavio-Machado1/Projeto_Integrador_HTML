@@ -15,13 +15,13 @@
   </a>
   <!-- O cabeçalho e o menu são compartilhados; aria-current identifica a página aberta. -->
   <header id="topo">
-   <p class="logo">
+   <p>
     <a href="index.html">
      SATEC 2026
     </a>
     — Semana Acadêmica de Tecnologia
    </p>
-   <p class="aviso">
+   <p>
     Projeto acadêmico: evento, participantes e condições de participação fictícios.
    </p>
    <nav aria-label="Navegação principal">
@@ -48,7 +48,6 @@
      </li>
     </ul>
    </nav>
-   <!-- Parece um botão, mas leva a outra página: por isso continua sendo um link. -->
    <a class="botao" href="inscricao.html">
     Inscreva-se
    </a>
@@ -67,8 +66,6 @@
     </p>
     <!-- labels associam cada instrução ao campo. Sem backend, name é omitido deliberadamente para não serializar dados na navegação GET. -->
     <form action="inscricao.html#demonstracao" aria-describedby="aviso-formulario" method="get">
-     <!-- fieldset + legend agrupam campos relacionados; o leitor de tela anuncia o grupo.
-          Cada div.campo só junta o label ao seu campo para o layout. -->
      <fieldset>
       <legend>
        Dados pessoais

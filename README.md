@@ -4,10 +4,10 @@ Este projeto apresenta um evento fictício de tecnologia e tem quatro páginas: 
 Sobre o projeto
 Na entrega 1 o site foi feito só com HTML, organizando o conteúdo com títulos, menus e tags semânticas, incluindo recursos de acessibilidade.
 
-Na entrega 2 (branch entrega-2) as quatro páginas receberam estilo com CSS no arquivo estilo.css, seguindo as aulas 15, 16 e 17:
-- box model, Flexbox (cabeçalho, menus, cards) e Grid (mapa da página, grade de cards, formulário, rodapé);
-- responsividade mobile first com media queries em 600px e 900px;
-- variáveis CSS, modo escuro com light-dark(), clamp(), :has(), container query e animações só para quem não pediu menos movimento.
+Na entrega 2 (branch entrega-2) as quatro páginas receberam estilo no arquivo estilo.css, seguindo as aulas 15, 16 e 17:
+- box model, Flexbox (cabeçalho, menus, cards) e Grid (mapa da página, grade de cards, formulário);
+- responsividade com media queries em 600px e 900px, começando pelo celular;
+- variáveis CSS e clamp(), da aula 17.
 
 As decisões estão em docs/entrega-2-css.md.
 

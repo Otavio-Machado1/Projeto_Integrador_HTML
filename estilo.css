@@ -1,66 +1,25 @@
-/* ==========================================================
-   SATEC 2026 — estilo.css (Projeto Integrador, entrega 2)
-   Baseado nas aulas 13 a 17 de Interface Web com HTML e CSS:
-   - Aulas 13/12: etapas 1 a 6  (cores, fontes, cascata)
-   - Aula 15:     etapas 7 a 12 (box model, Flexbox, Grid)
-   - Aula 16:     etapas 13 a 16 (formulário, estados, media queries)
-   - Aula 17:     etapas 17 a 22 (variáveis, modo escuro, funções
-                  modernas, nesting, :has(), container queries, movimento)
-   Estratégia: MOBILE FIRST. As regras base descrevem o celular e as
-   media queries, no FIM do arquivo, acrescentam o que muda em telas maiores.
-   ========================================================== */
-
-/* ----------------------------------------------------------
-   Etapas 17 e 18 (Aula 17): variáveis CSS e modo escuro
-   Cores nomeadas pelo PAPEL, não pela aparência.
-   light-dark(claro, escuro) escolhe pela preferência do sistema.
-   ---------------------------------------------------------- */
 :root {
-  color-scheme: light dark;
-  --cor-texto: light-dark(#0f172a, #e2e8f0);
-  --cor-texto-suave: light-dark(#475569, #94a3b8);
-  --cor-fundo: light-dark(#f8fafc, #0b1120);
-  --cor-superficie: light-dark(#ffffff, #111827);
-  --cor-borda: light-dark(#e2e8f0, #334155);
-  --cor-campo: light-dark(#64748b, #94a3b8); /* contorno dos campos: 3:1 */
-  --cor-primaria: light-dark(#1e3a8a, #93c5fd);
-  --cor-acento: light-dark(#0d9488, #5eead4);
-  --cor-zebra: light-dark(#f1f5f9, #1e293b);
-  --cor-menu: light-dark(#eff6ff, #1e293b);
-  --cor-erro: light-dark(#b91c1c, #fca5a5);
-  --cor-rodape: light-dark(#0f172a, #020617);
-  --cor-rodape-texto: #e2e8f0;
-  --cor-botao: #1e3a8a; /* igual nos dois temas: texto branco sempre legível */
-  --cor-botao-texto: #ffffff;
+  --cor-texto: #0f172a;
+  --cor-fundo: #f8fafc;
+  --cor-superficie: #ffffff;
+  --cor-borda: #e2e8f0;
+  --cor-primaria: #1e3a8a;
+  --cor-acento: #0d9488;
+  --cor-erro: #b91c1c;
   --raio: 6px;
 }
 
-/* ----------------------------------------------------------
-   Etapa 7 (Aula 15): a base de medidas
-   ---------------------------------------------------------- */
 * {
-  box-sizing: border-box; /* width já inclui padding e borda */
+  box-sizing: border-box;
 }
 
-img {
-  max-width: 100%; /* nunca maior que a caixa que a contém */
-  height: auto;
-}
-
-/* ----------------------------------------------------------
-   Etapa 1: base da página (herança)
-   Etapa 12 + 15: o mapa da página com Grid (base = celular,
-   uma coluna só; a lateral sobe em 900px, no fim do arquivo)
-   ---------------------------------------------------------- */
 body {
-  margin: 0; /* remove os 8px padrão do navegador */
+  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--cor-texto);
   background-color: var(--cor-fundo);
   line-height: 1.5;
-
   display: grid;
-  grid-template-columns: 1fr;
   grid-template-areas:
     "pular"
     "topo"
@@ -69,199 +28,92 @@ body {
     "rodape";
   gap: 1.5rem;
   max-width: 1100px;
-  margin-inline: auto; /* centraliza o bloco de 1100px */
+  margin: 0 auto;
 }
 
-/* Cada filho direto do body recebe o nome da sua área */
 .pular { grid-area: pular; }
 header { grid-area: topo; }
 main { grid-area: conteudo; }
 aside { grid-area: lateral; }
 footer { grid-area: rodape; }
 
-main {
-  padding-inline: 1rem; /* respiro lateral no celular */
-}
-
+main,
 aside {
-  margin-inline: 1rem;
+  margin: 0 1rem;
 }
 
-/* Link de salto: discreto, mas visível e destacado ao receber foco */
-.pular {
-  justify-self: start;
-  padding: 0.25rem 1rem;
-  font-size: 0.875rem;
-  color: var(--cor-primaria);
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* O main recebe foco pelo link de salto (tabindex="-1"):
-   sem contorno no clique, mas o contorno do teclado continua. */
-main:focus:not(:focus-visible) {
-  outline: none;
-}
-
-/* ----------------------------------------------------------
-   Etapa 2: títulos (agrupamento)
-   Etapa 19 (Aula 17): clamp() e text-wrap
-   ---------------------------------------------------------- */
 h1,
 h2,
 h3 {
   font-family: Georgia, 'Times New Roman', serif;
   color: var(--cor-primaria);
-  line-height: 1.2;
-}
-
-h1,
-h2 {
-  text-wrap: balance; /* linhas equilibradas, sem palavra sozinha */
 }
 
 h1 {
-  /* cresce com a tela, sem media query: mínimo, ideal, máximo */
   font-size: clamp(1.75rem, 1.2rem + 2.5vw, 2.75rem);
-  margin-block: 0.5rem 1rem;
 }
 
-/* Etapa 6: cascata (mesmo seletor: vence o que vem por último) */
 h2 {
   border-bottom: 2px solid var(--cor-borda);
-  padding-bottom: 0.25rem;
 }
 
 h2 {
   border-bottom-color: var(--cor-acento);
 }
 
-/* ----------------------------------------------------------
-   Etapas 3, 9 e 16: cabeçalho e menu
-   Grid fora (cada parte tem lugar fixo), Flexbox dentro (menu).
-   ---------------------------------------------------------- */
 header {
   background-color: var(--cor-superficie);
   border-bottom: 4px solid var(--cor-primaria);
-  padding: 1rem;
-
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-areas:
-    "logo   botao"
-    "slogan slogan"
-    "menu   menu";
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.75rem 1rem;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
 }
 
 header p {
   margin: 0;
 }
 
-.logo {
-  grid-area: logo;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline; /* nome e subtítulo na mesma linha de base */
-  gap: 0.25rem 0.5rem;
-  color: var(--cor-texto-suave);
-
-  & a {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--cor-primaria);
-    text-decoration: none;
-  }
+nav a {
+  color: var(--cor-primaria);
+  font-weight: bold;
+  text-decoration: none;
 }
 
-.aviso {
-  grid-area: slogan;
-  font-size: 0.875rem;
-  color: var(--cor-texto-suave);
-}
-
-header nav {
-  grid-area: menu;
-}
-
-header .botao {
-  grid-area: botao;
-}
-
-/* Etapa 9: menus em Flexbox (no ul, o filho direto do nav) */
 nav ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  list-style: none; /* continua sendo lista para o leitor de tela */
+  gap: 1rem;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* "header nav a" e não "nav a": não muda o menu Dia 1 | Dia 2 | Dia 3 */
 header nav li {
-  flex-grow: 1; /* no celular, cada linha do menu fica cheia */
+  flex-grow: 1;
 }
 
 header nav a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 2.75rem; /* 44px: área de toque confortável */
-  padding: 0.5rem 1rem;
-  border-radius: var(--raio);
-  background-color: var(--cor-menu);
-  color: var(--cor-primaria);
-  font-weight: bold;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  /* página atual: o aria-current do HTML vira estilo */
-  &[aria-current="page"] {
-    background-color: var(--cor-botao);
-    color: var(--cor-botao-texto);
-  }
+  display: block;
+  min-height: 2.75rem;
+  padding: 0.5rem;
+  text-align: center;
 }
 
-/* ----------------------------------------------------------
-   Etapa 8: link com cara de botão (continua sendo <a>)
-   ---------------------------------------------------------- */
-.botao,
-form button {
+.botao {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  border: 0;
-  border-radius: var(--raio);
-  background-color: var(--cor-botao);
-  color: var(--cor-botao-texto);
-  font-weight: bold;
+  background-color: var(--cor-primaria);
+  color: #ffffff;
   text-decoration: none;
-  cursor: pointer;
-}
-
-/* Etapa 19: hover 15% mais escuro, derivado do token */
-.botao:hover,
-form button:hover {
-  background-color: color-mix(in oklch, var(--cor-botao), black 15%);
-}
-
-/* ----------------------------------------------------------
-   Etapa 14 (Aula 16): foco visível só para o teclado
-   Nunca "outline: none" sem outro indicador no lugar.
-   ---------------------------------------------------------- */
-:focus-visible {
-  outline: 3px solid var(--cor-acento);
-  outline-offset: 2px;
-}
-
-/* ----------------------------------------------------------
-   Links e seções do conteúdo (box model)
-   ---------------------------------------------------------- */
-a {
-  color: var(--cor-primaria);
+  border-radius: var(--raio);
 }
 
 main section,
@@ -270,117 +122,22 @@ aside {
   margin-bottom: 1.5rem;
   background-color: var(--cor-superficie);
   border: 1px solid var(--cor-borda);
-  border-radius: var(--raio);
 }
 
-main section h2,
-aside h2 {
-  margin-top: 0;
-}
-
-/* Seções dentro de seções (dias da programação) não repetem a caixa */
 main section section {
   padding: 0;
-  margin-bottom: 2rem;
   border: 0;
 }
 
-li::marker {
-  color: var(--cor-acento);
+main section img {
+  display: block;
+  margin: 1rem auto;
 }
 
-::selection {
-  background-color: #ccfbf1;
-  color: #0f172a;
-}
-
-/* Imagem de destaque centralizada (margin auto só centraliza blocos) */
-figure {
-  margin: 1rem 0;
-
-  & img {
-    display: block;
-    margin-inline: auto;
-    border-radius: var(--raio);
-    border: 1px solid var(--cor-borda);
-  }
-}
-
-figcaption {
-  margin-top: 0.5rem;
-  font-size: 0.875rem;
-  color: var(--cor-texto-suave);
-  text-align: center;
-}
-
-/* ----------------------------------------------------------
-   Etapas 4, 10 e 11: cards (Grid na grade, Flexbox dentro)
-   ---------------------------------------------------------- */
-.cards {
-  display: grid;
-  /* quantas colunas couberem, cada uma com no mínimo 220px:
-     se adapta à janela sem media query */
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  background-color: var(--cor-superficie);
-  border: 1px solid var(--cor-borda);
-  border-radius: var(--raio);
-
-  & h3 {
-    margin: 0.5rem 0;
-    color: var(--cor-acento); /* etapa 6: classe + elemento vence "h1, h2, h3" */
-  }
-
-  & p {
-    margin: 0 0 0.5rem;
-  }
-
-  & img {
-    border-radius: var(--raio);
-  }
-
-  /* o link vai para o fim do card: todos alinhados na mesma altura */
-  & > a {
-    margin-top: auto;
-    padding-top: 0.5rem;
-  }
-
-  /* Etapa 20 (Aula 17): :has(), o seletor "que contém" */
-  &:has(a:focus-visible) {
-    border-color: var(--cor-acento);
-  }
-}
-
-.palestrante {
-  align-items: center; /* em column, centraliza na horizontal */
-  text-align: center;
-
-  & .nota {
-    margin-top: auto;
-    font-size: 0.875rem;
-    color: var(--cor-texto-suave);
-  }
-}
-
-/* ----------------------------------------------------------
-   Tabelas da programação
-   ---------------------------------------------------------- */
 table {
   width: 100%;
   border-collapse: collapse;
-}
-
-caption {
-  padding-bottom: 0.5rem;
-  font-weight: bold;
-  text-align: left;
-  color: var(--cor-texto-suave);
+  margin-bottom: 1.5rem;
 }
 
 th,
@@ -388,40 +145,36 @@ td {
   padding: 0.5rem;
   border-bottom: 1px solid var(--cor-borda);
   text-align: left;
-  vertical-align: top;
-}
-
-thead th {
-  background-color: var(--cor-botao);
-  color: var(--cor-botao-texto);
-}
-
-tbody th {
-  white-space: nowrap; /* horário não quebra */
 }
 
 tbody tr:nth-child(even) {
-  background-color: var(--cor-zebra);
+  background-color: #f1f5f9;
 }
 
-/* Menu "Dia 1 | Dia 2 | Dia 3": mesmo Flexbox, outro visual */
-main nav {
-  margin-bottom: 1.5rem;
-
-  & a {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    border: 2px solid var(--cor-acento);
-    border-radius: 999px;
-    font-weight: bold;
-    text-decoration: none;
-  }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
 }
 
-/* ----------------------------------------------------------
-   Etapas 13 e 14 (Aula 16): formulário
-   Rótulo acima do campo: funciona em qualquer largura.
-   ---------------------------------------------------------- */
+.palestrante {
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.palestrante h3 {
+  color: var(--cor-acento);
+}
+
+.palestrante img {
+  margin: 0;
+}
+
 form {
   display: grid;
   gap: 1rem;
@@ -430,190 +183,79 @@ form {
 fieldset {
   display: grid;
   gap: 1rem;
-  margin: 0;
-  padding: 1rem;
-  border: 1px solid var(--cor-borda);
-  border-radius: var(--raio);
-}
-
-legend {
-  padding-inline: 0.5rem;
-  font-weight: bold;
-  color: var(--cor-primaria);
 }
 
 .campo {
   display: grid;
-  align-content: start; /* campo não estica quando o vizinho tem dica */
+  align-content: start;
   gap: 0.375rem;
-
-  /* Etapa 20: o label muda de cor conforme o estado do campo */
-  &:has(:focus-visible) label {
-    color: var(--cor-acento);
-  }
-
-  &:has(:user-invalid) label {
-    color: var(--cor-erro);
-  }
 }
 
-label {
-  font-weight: bold;
-}
-
-/* input, select e button não herdam a fonte do body sozinhos */
 input,
 select,
 button {
   font: inherit;
 }
 
-/* :not() deixa o checkbox de fora do width: 100% */
 input:not([type="checkbox"]),
 select {
   width: 100%;
   min-height: 2.75rem;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid var(--cor-campo);
-  border-radius: var(--raio);
-  background-color: var(--cor-superficie);
-  color: var(--cor-texto);
-}
-
-/* Erro só depois que o usuário interagiu (e não :invalid) */
-input:user-invalid,
-select:user-invalid {
-  border-color: var(--cor-erro);
-  border-width: 2px;
+  border: 1px solid #64748b;
 }
 
 .dica {
   margin: 0;
-  font-size: 0.875rem;
-  color: var(--cor-texto-suave);
 }
 
-.aceite {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-
-  & input {
-    width: 1.25rem;
-    height: 1.25rem;
-    accent-color: var(--cor-botao); /* cor do checkbox marcado */
-  }
-
-  & input:checked + label {
-    color: var(--cor-acento);
-  }
+.aceite input {
+  accent-color: var(--cor-primaria);
 }
 
 form button {
   justify-self: start;
-  min-height: 2.75rem;
-}
-
-/* Etapa 20: botão mais claro enquanto há campo inválido */
-form:has(:invalid) button {
-  opacity: 0.7;
-}
-
-/* ----------------------------------------------------------
-   Perguntas frequentes (details/summary)
-   ---------------------------------------------------------- */
-details {
-  margin-bottom: 0.75rem;
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--cor-borda);
+  padding: 0.75rem 1.5rem;
+  background-color: var(--cor-primaria);
+  color: #ffffff;
+  border: 0;
   border-radius: var(--raio);
-
-  &[open] {
-    border-color: var(--cor-acento);
-  }
 }
 
-summary {
-  font-weight: bold;
-  color: var(--cor-primaria);
-  cursor: pointer;
-
-  &:hover {
-    text-decoration: underline;
-  }
+.botao:hover,
+form button:hover {
+  background-color: #1e40af;
 }
 
-/* ----------------------------------------------------------
-   Lateral (aside) — Etapa 21 (Aula 17): container query
-   A lista dt/dd olha a largura do aside, não a da tela:
-   no celular o aside é largo (lado a lado); na lateral de
-   280px do desktop, termo e valor ficam empilhados.
-   ---------------------------------------------------------- */
-aside {
-  container: lateral / inline-size;
+:focus-visible {
+  outline: 3px solid var(--cor-acento);
 }
 
-dl {
-  display: grid;
-  gap: 0.25rem 1rem;
-  margin: 0 0 1rem;
+input:user-invalid,
+select:user-invalid {
+  border-color: var(--cor-erro);
 }
 
-dt {
-  font-weight: bold;
-  color: var(--cor-primaria);
+.campo:has(:user-invalid) label {
+  color: var(--cor-erro);
 }
 
-dd {
-  margin: 0 0 0.5rem;
-}
-
-@container lateral (min-width: 30rem) {
-  dl {
-    grid-template-columns: auto 1fr;
-  }
-
-  dd {
-    margin: 0;
-  }
-}
-
-/* ----------------------------------------------------------
-   Etapa 5: rodapé
-   ---------------------------------------------------------- */
 footer {
-  padding: 1.5rem 1rem;
-  background-color: var(--cor-rodape);
-  border-top: 4px solid var(--cor-acento);
-  color: var(--cor-rodape-texto);
+  background-color: #0f172a;
+  color: #e2e8f0;
   font-size: 0.875rem;
   text-align: center;
-
-  display: grid;
-  gap: 0.5rem;
-
-  & p {
-    margin: 0;
-  }
-
-  & a {
-    color: #ffffff;
-  }
+  padding: 1rem;
 }
 
-/* ==========================================================
-   Etapas 15 e 16 (Aula 16): MEDIA QUERIES (mobile first)
-   Ficam no fim: a regra que vem depois vence.
-   ========================================================== */
+footer a {
+  color: #ffffff;
+}
 
-/* A partir de 600px */
 @media (min-width: 600px) {
-  /* menu numa linha só, sem esticar os itens */
   header nav li {
     flex-grow: 0;
   }
 
-  /* dois campos por linha no formulário */
   fieldset {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -621,18 +263,8 @@ footer {
   legend {
     grid-column: 1 / -1;
   }
-
-  /* Prática da aula 16: rodapé em duas colunas */
-  footer {
-    grid-template-columns: repeat(2, 1fr);
-
-    & p:nth-child(-n + 2) {
-      grid-column: 1 / -1; /* direitos e aviso na linha inteira */
-    }
-  }
 }
 
-/* A partir de 900px: o aside sobe para a lateral */
 @media (min-width: 900px) {
   body {
     grid-template-columns: 1fr 280px;
@@ -643,54 +275,8 @@ footer {
       "rodape rodape";
   }
 
-  main {
-    padding-inline: 1rem 0;
-  }
-
   aside {
-    align-self: start; /* não estica até a altura do main */
-    margin-inline: 0 1rem;
-  }
-
-  /* logo, menu e botão lado a lado no cabeçalho */
-  header {
-    grid-template-columns: auto 1fr auto;
-    grid-template-areas:
-      "logo   menu   botao"
-      "slogan slogan slogan";
-    padding-inline: 1.5rem;
-  }
-
-  /* nome em cima, subtítulo embaixo: sobra espaço para o menu */
-  .logo {
-    flex-direction: column;
-    gap: 0;
-  }
-
-  header nav ul {
-    justify-content: center;
-  }
-}
-
-/* ==========================================================
-   Etapa 22 (Aula 17): movimento com responsabilidade
-   Só anima para quem NÃO pediu menos movimento no sistema.
-   ========================================================== */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-
-  .card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 16px rgb(15 23 42 / 0.15);
-    }
-  }
-
-  @view-transition {
-    navigation: auto; /* troca suave entre páginas (Firefox: só troca) */
+    margin-left: 0;
+    align-self: start;
   }
 }
